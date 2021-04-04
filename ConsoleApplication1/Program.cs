@@ -69,7 +69,7 @@ namespace SocketTcpServer
         static int port = 8005;
         static void Main(string[] args)
         {
-            Console.WriteLine("Доступные для подключения ip сервера:");
+            Console.WriteLine("Available for connection ip:");
             List<string> adresses = new List<string>();
             foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
             {
@@ -85,7 +85,7 @@ namespace SocketTcpServer
                     }
                 }
             }
-            Console.WriteLine("Выберите желаемый адрес");
+            Console.WriteLine("Enter desired ip");
             string adr = Console.ReadLine();/*
             string adr = "";
             while (true)
@@ -101,13 +101,13 @@ namespace SocketTcpServer
                     break;
                 }
             }*/
-            Console.WriteLine("Введите желаемый порт");
+            Console.WriteLine("Enter desired port");
             while (true)
             {
                 string message = Console.ReadLine();
                 if (PortInUse(Int32.Parse(message)))
                 {
-                    Console.WriteLine("Данный порт уже используется, введите другой порт");
+                    Console.WriteLine("Port is already in use");
                 }
                 else
                 {
@@ -121,7 +121,7 @@ namespace SocketTcpServer
             {
                 listenSocket.Bind(ipPoint);
                 listenSocket.Listen(10);
-                Console.WriteLine("Сервер запущен. Ожидание подключений...");
+                Console.WriteLine("Server launched. Waiting for connections...");
                 while (true)
                 {
                     Socket handler = listenSocket.Accept();

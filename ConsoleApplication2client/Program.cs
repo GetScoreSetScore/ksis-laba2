@@ -44,9 +44,9 @@ namespace SocketTcpClient
         static string address = "192.168.100.7";
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите ip сервера:");
+            Console.WriteLine("Enter server ip");
             address = Console.ReadLine();
-            Console.WriteLine("Введите порт сервера:");
+            Console.WriteLine("Enter server port:");
             port = Int32.Parse(Console.ReadLine());
             while (true)
             {
